@@ -17,9 +17,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-require 'autocommands'
-require 'keymaps'
+-- Load in this order is safest.
+-- Be careful if you create a keymap that depends on an autocommand.
 require 'options'
+require 'keymaps'
+require 'autocommands'
 
 require('lazy').setup({
     -- For plugins requiring no configuration, add repo link directly.
