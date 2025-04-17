@@ -38,8 +38,9 @@ require('lazy').setup({
     require 'plugins/mini',
     require 'plugins/nvim-dap',
     require 'plugins/oil',
-    require 'plugins/todo-comments',
+    require 'plugins/precognition',
     require 'plugins/telescope',
+    require 'plugins/todo-comments',
     require 'plugins/nvim-treesitter',
     require 'plugins/which-key',
 }, {
