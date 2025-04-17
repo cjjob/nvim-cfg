@@ -31,6 +31,7 @@ require('lazy').setup({
     require 'plugins/autocompletion',
     require 'plugins/codecompanion',
     require 'plugins/colorscheme',
+    require 'plugins/conform',
     require 'plugins/copilot',
     require 'plugins/gitsigns',
     require 'plugins/lsp',
