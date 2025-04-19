@@ -33,8 +33,3 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.inccommand = 'split'
 vim.opt.cursorline = true -- Show which line your cursor is on.
 vim.opt.scrolloff = 10
-
--- Colorscheme.
--- Arguably this belong in its own colors.lua file.
--- But cba for just one setting for now.
-vim.cmd 'colorscheme default'

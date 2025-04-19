@@ -30,6 +30,7 @@ require('lazy').setup({
 
     -- For more involved plugins, take a modular approach.
     require 'plugins/autocompletion',
+    require 'plugins/catppuccin',
     require 'plugins/codecompanion',
     -- require 'plugins/colorscheme',
     require 'plugins/conform',
