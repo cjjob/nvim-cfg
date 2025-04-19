@@ -153,6 +153,12 @@ local lsp = {
                 end,
             })
 
+            -- Show diagnostics 'inline' (little messages at the end).
+            local diagnostic_config = vim.diagnostic.config()
+            vim.diagnostic.config(vim.tbl_extend('force', diagnostic_config, {
+                virtual_text = true,
+            }))
+
             -- Change diagnostic symbols in the sign column (gutter)
             if vim.g.have_nerd_font then
                 local signs = { ERROR = '', WARN = '', INFO = '', HINT = '' }

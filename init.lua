@@ -1,10 +1,10 @@
 -- :help lua-guide
 -- :help
--- Keymap "<space>sh" to [s]earch the [h]elp documentation.
+-- <space>sh to [s]earch the [h]elp documentation.
 -- If you experience any errors while trying to install kickstart, run
--- `:checkhealth` for more info.
+-- :checkhealth for more info.
 
--- #### Install `lazy.nvim` plugin manager ####
+-- Install `lazy.nvim` plugin manager.
 -- :help lazy.nvim.txt`
 -- https://github.com/folke/lazy.nvim
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -24,18 +24,21 @@ require 'keymaps'
 require 'autocommands'
 
 require('lazy').setup({
+
     -- For plugins requiring no configuration, add repo link directly.
-    'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+    'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically.
 
     -- For more involved plugins, take a modular approach.
     require 'plugins/autocompletion',
     require 'plugins/codecompanion',
-    require 'plugins/colorscheme',
+    -- require 'plugins/colorscheme',
     require 'plugins/conform',
     require 'plugins/copilot',
+    require 'plugins/flash',
     require 'plugins/gitsigns',
     require 'plugins/lsp',
     require 'plugins/mini',
+    require 'plugins/noice',
     require 'plugins/nvim-dap',
     require 'plugins/oil',
     require 'plugins/precognition',
@@ -64,13 +67,3 @@ require('lazy').setup({
         },
     },
 })
-
--- TODO: Move this somewhere better!
--- Show diagnostics 'inline'.
-local diagnostic_config = vim.diagnostic.config()
-vim.diagnostic.config(vim.tbl_extend('force', diagnostic_config, {
-    virtual_text = true,
-}))
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
