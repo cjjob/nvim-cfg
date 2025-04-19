@@ -31,6 +31,16 @@ return -- Fuzzy Finder - files, lsp, etc.
         -- :help telescope
         -- :help telescope.setup()
         require('telescope').setup {
+            defaults = {
+                mappings = {
+                    i = {
+                        ['<C-x>'] = require('telescope.actions').delete_buffer,
+                    },
+                    n = {
+                        ['<C-x>'] = require('telescope.actions').delete_buffer,
+                    },
+                },
+            },
             extensions = {
                 ['ui-select'] = {
                     require('telescope.themes').get_dropdown(),
@@ -78,4 +88,7 @@ return -- Fuzzy Finder - files, lsp, etc.
             builtin.find_files { cwd = vim.fn.stdpath 'config' }
         end, { desc = '[S]earch [N]eovim files' })
     end,
+    keys = {
+        { '<leader>sj', ':Telescope jumplist<CR>', desc = 'Jumplist' },
+    },
 }
