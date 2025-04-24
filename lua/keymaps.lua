@@ -39,5 +39,13 @@ km.set('n', '<C-.>', '<C-i>', { desc = 'Jump "forward"' })
 
 -- <leader>k + <key> for some common actions.
 km.set('n', '<leader>ka', 'ggVGy', { desc = 'Select all and copy' })
-km.set('n', '<leader>kn', 'ggVGd', { desc = 'Delete all ([n]uke)' })
 km.set('n', '<leader>kf', 'ggVGgq', { desc = 'Format buffer' })
+km.set('n', '<leader>kn', 'ggVGd', { desc = 'Delete all ([n]uke)' })
+km.set('n', '<leader>kr', function()
+    local cc = vim.fn.input 'Set colorcolumn to: '
+    if cc ~= '' then
+        vim.opt.colorcolumn = cc
+    else
+        vim.opt.colorcolumn = '' -- Toggle off.
+    end
+end, { desc = 'Set colorcolumn ("ruler")' })
