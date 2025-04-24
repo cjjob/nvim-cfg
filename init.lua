@@ -43,6 +43,7 @@ require('lazy').setup({
     require 'plugins/nvim-dap',
     require 'plugins/oil',
     require 'plugins/precognition',
+    require 'plugins/python-indent',
     require 'plugins/telescope',
     require 'plugins/todo-comments',
     require 'plugins/nvim-treesitter',

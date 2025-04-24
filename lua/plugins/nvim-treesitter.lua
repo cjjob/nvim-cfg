@@ -17,6 +17,7 @@ return { -- Highlight, edit, and navigate code
             'regex',
             'vim',
             'vimdoc',
+            indent = { enable = true, disable = { 'python', 'ruby' } },
         },
         -- Autoinstall languages that are not installed
         auto_install = true,
