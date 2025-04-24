@@ -44,6 +44,7 @@ require('lazy').setup({
     require 'plugins/oil',
     require 'plugins/precognition',
     require 'plugins/python-indent',
+    require 'plugins/render-markdown',
     require 'plugins/telescope',
     require 'plugins/todo-comments',
     require 'plugins/nvim-treesitter',
