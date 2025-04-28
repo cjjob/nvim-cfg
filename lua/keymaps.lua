@@ -49,3 +49,9 @@ km.set("n", "<leader>kr", function()
         vim.opt.colorcolumn = "" -- Toggle off.
     end
 end, { desc = "Set colorcolumn (\"ruler\")" })
+km.set( -- Depends on 'akinsho/toggleterm.nvim'.
+    "n",
+    "<leader>kt",
+    ":ToggleTerm dir=git_dir direction=float<CR>",
+    { desc = "Toggle terminal" }
+)
