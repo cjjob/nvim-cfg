@@ -1,10 +1,10 @@
 return {
-    'folke/flash.nvim',
-    event = 'VeryLazy',
+    "folke/flash.nvim",
+    event = "VeryLazy",
     ---@type Flash.Config
     opts = {
         label = {
-            style = 'overlay',
+            style = "overlay",
         },
         highlight = {
             -- Can't work out how to get two different bg colors.

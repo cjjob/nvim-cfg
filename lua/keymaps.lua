@@ -3,49 +3,49 @@ local km = vim.keymap -- For brevity
 -- :help vim.keymap.set()
 -- :help hlsearch
 km.set(
-    'n',
-    '<Esc>', -- Clear highlights on search with <Esc> in normal mode.
-    '<cmd>nohlsearch<CR>'
+    "n",
+    "<Esc>", -- Clear highlights on search with <Esc> in normal mode.
+    "<cmd>nohlsearch<CR>"
 )
 km.set(
-    'n',
-    '<leader>q', -- Diagnostics.
+    "n",
+    "<leader>q", -- Diagnostics.
     vim.diagnostic.setloclist,
-    { desc = 'Open diagnostic [Q]uickfix list' }
+    { desc = "Open diagnostic [Q]uickfix list" }
 )
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit
 -- easier for people to discover. Otherwise, you normally need to press
 -- <C-\><C-n>, which is not what someone will guess without a bit more
 -- experience.
 -- NOTE: This won't work in all terminal emulators/tmux/etc.
-km.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+km.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- Move between windows with <leader> + (remapped) arrow keys.
-km.set('n', '<leader><Left>', '<C-w>h', { desc = 'Move to left window' })
-km.set('n', '<leader><Right>', '<C-w>l', { desc = 'Move to right window' })
-km.set('n', '<leader><Up>', '<C-w>k', { desc = 'Move to above window' })
-km.set('n', '<leader><Down>', '<C-w>j', { desc = 'Move to below window' })
+km.set("n", "<leader><Left>", "<C-w>h", { desc = "Move to left window" })
+km.set("n", "<leader><Right>", "<C-w>l", { desc = "Move to right window" })
+km.set("n", "<leader><Up>", "<C-w>k", { desc = "Move to above window" })
+km.set("n", "<leader><Down>", "<C-w>j", { desc = "Move to below window" })
 
 -- jl for 'big moves' (since I use caps+ijkl as arrows).
-km.set('n', 'j', '<C-u>', { desc = 'Move half page up' })
-km.set('n', 'l', '<C-d>', { desc = 'Move half page down' })
+km.set("n", "j", "<C-u>", { desc = "Move half page up" })
+km.set("n", "l", "<C-d>", { desc = "Move half page down" })
 
 -- ctrl + ,/. to navigate jumplist (entries in `:jumps`).
 -- :help jump-motions.
 -- I think next/previous entry in jumplist are kind of reverse of
 -- back/forward intutively (in time).
-km.set('n', '<C-,>', '<C-o>', { desc = 'Jump "back"' })
-km.set('n', '<C-.>', '<C-i>', { desc = 'Jump "forward"' })
+km.set("n", "<C-,>", "<C-o>", { desc = "Jump \"back\"" })
+km.set("n", "<C-.>", "<C-i>", { desc = "Jump \"forward\"" })
 
 -- <leader>k + <key> for some common actions.
-km.set('n', '<leader>ka', 'ggVGy', { desc = 'Select all and copy' })
-km.set('n', '<leader>kf', 'ggVGgq', { desc = 'Format buffer' })
-km.set('n', '<leader>kn', 'ggVGd', { desc = 'Delete all ([n]uke)' })
-km.set('n', '<leader>kr', function()
-    local cc = vim.fn.input 'Set colorcolumn to: '
-    if cc ~= '' then
+km.set("n", "<leader>ka", "ggVGy", { desc = "Select all and copy" })
+km.set("n", "<leader>kf", "ggVGgq", { desc = "Format buffer" })
+km.set("n", "<leader>kn", "ggVGd", { desc = "Delete all ([n]uke)" })
+km.set("n", "<leader>kr", function()
+    local cc = vim.fn.input("Set colorcolumn to: ")
+    if cc ~= "" then
         vim.opt.colorcolumn = cc
     else
-        vim.opt.colorcolumn = '' -- Toggle off.
+        vim.opt.colorcolumn = "" -- Toggle off.
     end
-end, { desc = 'Set colorcolumn ("ruler")' })
+end, { desc = "Set colorcolumn (\"ruler\")" })
