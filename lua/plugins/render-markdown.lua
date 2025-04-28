@@ -6,4 +6,8 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
+    ft = {
+        'markdown',
+        'codecompanion', -- For the chat buffer for CodeCompanion plugin.
+    },
 }

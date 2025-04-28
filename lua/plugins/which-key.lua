@@ -38,11 +38,12 @@ return {
         -- Document existing key chains.
         spec = {
             { '<leader>b', group = 'De[B]ugger' },
-            { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
+            { '<leader>c', group = '[C]opilot' },
             { '<leader>d', group = '[D]ocument' },
             { '<leader>g', group = '[G]oto (also non-leader versions!)' },
             { '<leader>k', group = '[K]eymaps - assorted' },
-            { '<leader>p', group = 'Co[P]ilot' },
+            { '<leader>l', group = '[L]SP', mode = { 'n', 'x' } },
+            { '<leader>p', group = 'Code Com[P]anion' },
             { '<leader>r', group = '[R]ename' },
             { '<leader>s', group = '[S]earch' },
             { '<leader>w', group = '[W]orkspace' },

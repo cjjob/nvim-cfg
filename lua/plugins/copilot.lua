@@ -18,11 +18,11 @@ return {
         vim.keymap.set('i', '<C-Space>', '<Plug>(copilot-suggest)')
     end,
     keys = {
-        { '<leader>ps', ':Copilot status<CR>', desc = 'Co[p]ilot Status' },
-        { '<leader>pr', ':Copilot setup<CR>', desc = 'Co[p]ilot (re)run Setup' },
-        { '<leader>pp', ':Copilot panel<CR>', desc = 'Co[p]ilot Panel' },
-        { '<leader>pd', ':Copilot disable<CR>', desc = 'Co[p]ilot Disable' },
-        { '<leader>pe', ':Copilot enable<CR>', desc = 'Co[p]ilot Enable' },
-        { '<leader>ph', ':Copilot help<CR>', desc = 'Co[p]ilot Help' },
+        { '<leader>cs', ':Copilot status<CR>', desc = '[C]opilot Status' },
+        { '<leader>cr', ':Copilot setup<CR>', desc = '[C]opilot (re)run Setup' },
+        { '<leader>cp', ':Copilot panel<CR>', desc = '[C]opilot Panel' },
+        { '<leader>cd', ':Copilot disable<CR>', desc = '[C]opilot Disable' },
+        { '<leader>ce', ':Copilot enable<CR>', desc = '[C]opilot Enable' },
+        { '<leader>ch', ':Copilot help<CR>', desc = '[C]opilot Help' },
     },
 }
