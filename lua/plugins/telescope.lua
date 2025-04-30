@@ -2,7 +2,11 @@ return -- Fuzzy Finder - files, lsp, etc.
 {
     "nvim-telescope/telescope.nvim",
     event = "VimEnter",
-    branch = "0.1.x",
+    -- They specifically advise against this.
+    -- Should either use latest release tag (0.1.8 atm) or the relase branch (0.1.x).
+    -- But there is a fix on master for jumplist that I want to use.
+    -- TODO: Switch to 0.2.0 when released.
+    branch = "master",
     dependencies = {
         "nvim-lua/plenary.nvim",
         {
@@ -32,6 +36,13 @@ return -- Fuzzy Finder - files, lsp, etc.
         -- :help telescope.setup()
         require("telescope").setup({
             defaults = {
+                layout_strategy = "center",
+                layout_config = {
+                    center = {
+                        anchor = "N",
+                        prompt_position = "top",
+                    },
+                },
                 mappings = {
                     i = {
                         ["<C-x>"] = require("telescope.actions").delete_buffer,
@@ -59,6 +70,7 @@ return -- Fuzzy Finder - files, lsp, etc.
         vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
         vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
         vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
+        vim.keymap.set("n", "<leader>sj", builtin.jumplist, { desc = "[S]earch [J]umplist" })
         vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
         vim.keymap.set("n", "<leader>sl", builtin.resume, { desc = "[S]earch [L]ast" })
         vim.keymap.set("n", "<leader>sr", builtin.oldfiles, { desc = "[S]earch [R]ecent" })
@@ -89,7 +101,4 @@ return -- Fuzzy Finder - files, lsp, etc.
             builtin.find_files({ cwd = vim.fn.stdpath("config") })
         end, { desc = "[S]earch [N]eovim files" })
     end,
-    keys = {
-        { "<leader>sj", ":Telescope jumplist<CR>", desc = "Jumplist" },
-    },
 }
