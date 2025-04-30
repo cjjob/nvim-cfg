@@ -33,6 +33,7 @@ require("autocommands")
 require("lazy").setup({
 
     -- For plugins requiring no configuration, add repo link directly.
+    "Bekaboo/deadcolumn.nvim",
     "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically.
 
     -- For more involved plugins, take a modular approach.
