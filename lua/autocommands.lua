@@ -9,3 +9,25 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank()
     end,
 })
+
+-- Colorcolumns (cc), commonly called "ruler"s.
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "go", "lua" },
+    callback = function()
+        vim.opt_local.colorcolumn = "100"
+    end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "python" },
+    callback = function()
+        vim.opt_local.colorcolumn = "88"
+    end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "rust" },
+    callback = function()
+        vim.opt_local.colorcolumn = "80,100"
+    end,
+})
