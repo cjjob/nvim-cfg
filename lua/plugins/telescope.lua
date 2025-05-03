@@ -41,6 +41,7 @@ return -- Fuzzy Finder - files, lsp, etc.
                     center = {
                         anchor = "N",
                         prompt_position = "top",
+                        width = 0.85,
                     },
                 },
                 mappings = {
