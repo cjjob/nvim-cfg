@@ -11,6 +11,14 @@ return {
             ["."] = false,
         }
 
+        -- Accept entire completion with F13.
+        -- i.e. Don't accept entire completions. Write your own code.
+        -- Spam Ctrl+Right to go line by line if you must.
+        vim.keymap.set("i", "<F13>", "copilot#Accept(\"\")", {
+            expr = true,
+            replace_keycodes = false,
+        })
+        vim.g.copilot_no_tab_map = true
         -- Note, if on macOS, you need to disable CTRL+Left/Right/Up doing Mission Control things.
         vim.keymap.set("i", "<C-Left>", "<Plug>(copilot-dismiss)")
         vim.keymap.set("i", "<C-Right>", "<Plug>(copilot-accept-line)")
