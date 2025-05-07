@@ -1,5 +1,6 @@
 return { -- Collection of various small independent plugins/modules
     "echasnovski/mini.nvim",
+    version = false,
     dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
     config = function()
         -- Better Around/Inside textobjects
@@ -50,7 +51,30 @@ return { -- Collection of various small independent plugins/modules
             return "%2l:%-2v"
         end
 
-        -- ... and there is more!
-        --  Check out: https://github.com/echasnovski/mini.nvim
+        -- Start screen.
+        require("mini.starter").setup()
+        -- And sessions for start screen.
+        require("mini.sessions").setup({
+            directory = vim.fn.expand("~/workspace/nvim_sessions/"),
+
+            -- Set up keymaps for session management.
+            vim.keymap.set("n", "<leader>mss", function()
+                local sname = vim.fn.input("Session name: ")
+                -- TODO: Detect not overwriting existing sessions.
+                if sname == "" then
+                    vim.notify("Session name cannot be empty! Aborting.")
+                    return
+                end
+                MiniSessions.write(sname)
+            end),
+            vim.keymap.set("n", "<leader>msd", function()
+                local sname = vim.fn.input("Session name: ")
+                if sname == "" then
+                    vim.notify("Session name cannot be empty! Aborting.")
+                    return
+                end
+                MiniSessions.delete(sname)
+            end),
+        })
     end,
 }
