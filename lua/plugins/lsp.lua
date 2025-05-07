@@ -116,6 +116,11 @@ local lsp = {
                         require("telescope.builtin").lsp_type_definitions,
                         "Type [D]efinition"
                     )
+                    map(
+                        "<leader>gt",
+                        require("telescope.builtin").lsp_type_definitions,
+                        "[T]ype definition"
+                    )
 
                     -- Fuzzy find all the symbols in your current document.
                     --  Symbols are things like variables, functions, types, etc.
