@@ -34,5 +34,21 @@ return {
             },
             shell = "zsh -l", -- Launch zsh as login shell. Ensures config is loaded.
         })
+        -- km.set( -- Depends on 'akinsho/toggleterm.nvim'.
+        --     "n",
+        --     "<leader>kt",
+        --     ":ToggleTerm dir=git_dir direction=float<CR>",
+        --     { desc = "Toggle terminal" }
+        -- )
     end,
+    -- Set F15 to toggle float terminal.
+    -- NOTE: This only makes sense because I've remapped CAPSLOCK + # to F15.
+    keys = {
+        {
+            mode = { "n", "t" },
+            "<F15>",
+            ":ToggleTerm dir=git_dir direction=float<CR>",
+            desc = "Toggle float terminal.",
+        },
+    },
 }
