@@ -46,6 +46,7 @@ require("lazy").setup({
     require("plugins/flash"),
     require("plugins/git-blame"),
     require("plugins/gitsigns"),
+    require("plugins/hml"),
     require("plugins/lsp"),
     require("plugins/mini"),
     require("plugins/noice"),
