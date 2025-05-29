@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "go", "lua" },
     callback = function()
-        vim.opt_local.colorcolumn = "100"
+        vim.opt_local.colorcolumn = "101"
     end,
 })
 
@@ -28,6 +28,6 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "rust" },
     callback = function()
-        vim.opt_local.colorcolumn = "80,100"
+        vim.opt_local.colorcolumn = "81,101"
     end,
 })
