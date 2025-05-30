@@ -8,6 +8,7 @@ return {
         dim = { enabled = true },
         indent = { enabled = true },
         lazygit = { enabled = true },
+        notifier = { enabled = true },
         terminal = { enabled = true },
     },
     keys = {
