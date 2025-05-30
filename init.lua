@@ -55,9 +55,10 @@ require("lazy").setup({
     require("plugins/precognition"),
     require("plugins/python-indent"),
     require("plugins/render-markdown"),
+    require("plugins/snacks"),
     require("plugins/telescope"),
     require("plugins/todo-comments"),
-    require("plugins/toggleterm"),
+    -- require("plugins/toggleterm"),
     require("plugins/nvim-treesitter"),
     require("plugins/which-key"),
 }, {
