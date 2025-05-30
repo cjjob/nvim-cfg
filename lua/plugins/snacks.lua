@@ -1,12 +1,25 @@
+return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
     ---@type snacks.Config
     opts = {
+        bufdelete = { enabled = true },
+        indent = { enabled = true },
         lazygit = { enabled = true },
         terminal = { enabled = true },
     },
     keys = {
+
+        -- bufdelete
+        {
+            mode = "n",
+            "<leader>kd",
+            function()
+                Snacks.bufdelete.other()
+            end,
+            desc = "Delete all other buffers",
+        },
 
         -- lazygit
         {
