@@ -250,7 +250,7 @@ local lsp = {
                 bashls = {
                     filetypes = { "sh", "zsh" },
                 },
-                -- clangd = {},
+                clangd = {},
                 gopls = {},
                 lua_ls = {
                     -- cmd = { ... },
