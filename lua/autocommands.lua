@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- Colorcolumns (cc), commonly called "ruler"s.
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "go", "lua" },
+    pattern = { "c", "go", "lua" },
     callback = function()
         vim.opt_local.colorcolumn = "101"
     end,
@@ -28,6 +28,6 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "rust" },
     callback = function()
-        vim.opt_local.colorcolumn = "81,101"
+        vim.opt_local.colorcolumn = "81, 101"
     end,
 })
