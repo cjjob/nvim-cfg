@@ -77,7 +77,11 @@ return -- Fuzzy Finder - files, lsp, etc.
         vim.keymap.set("n", "<leader>sr", builtin.oldfiles, { desc = "[S]earch [R]ecent" })
         vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
         vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
-        vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Find existing buffers" })
+        vim.keymap.set("n", "<leader><leader>", function()
+            builtin.buffers({
+                sort_mru = true,
+            })
+        end, { desc = "Find existing buffers" })
 
         -- Slightly advanced example of overriding default behavior and theme
         vim.keymap.set("n", "<leader>/", function()
