@@ -84,6 +84,7 @@ return -- Fuzzy Finder - files, lsp, etc.
         vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
         vim.keymap.set("n", "<leader><leader>", function()
             builtin.buffers({
+                ignore_current_buffer = true,
                 sort_mru = true,
             })
         end, { desc = "Find existing buffers" })
