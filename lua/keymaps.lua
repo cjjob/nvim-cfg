@@ -47,3 +47,10 @@ km.set("n", "<leader>ka", "ggVG", { desc = "Visual all" })
 --         vim.opt.colorcolumn = "" -- Toggle off.
 --     end
 -- end, { desc = "Set colorcolumn (\"ruler\")" })
+km.set("n", "<leader>ks", function()
+    if vim.g.syntax_on then
+        vim.cmd("syntax off")
+    else
+        vim.cmd("syntax on")
+    end
+end, { desc = "Toggle syntax highlighting" })
