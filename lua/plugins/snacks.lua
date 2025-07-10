@@ -5,7 +5,6 @@ return {
     ---@type snacks.Config
     opts = {
         bufdelete = { enabled = true },
-        dim = { enabled = true },
         indent = { enabled = true },
         lazygit = { enabled = true },
         notifier = { enabled = true },

@@ -82,6 +82,3 @@ require("lazy").setup({
         },
     },
 })
-
-Snacks.dim()
-print("Snacks dimming module loaded!")
