@@ -39,12 +39,10 @@ require("lazy").setup({
     -- For more involved plugins, take a modular approach.
     require("plugins/autocompletion"),
     require("plugins/catppuccin"),
-    require("plugins/codecompanion"),
     require("plugins/conform"),
     require("plugins/flash"),
     require("plugins/git-blame"),
     require("plugins/gitsigns"),
-    require("plugins/hml"),
     require("plugins/lsp"),
     require("plugins/mini"),
     require("plugins/noice"),
