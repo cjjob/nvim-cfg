@@ -47,7 +47,6 @@ require("lazy").setup({
     require("plugins/noice"),
     require("plugins/nvim-dap"),
     require("plugins/oil"),
-    require("plugins/precognition"),
     require("plugins/python-indent"),
     require("plugins/render-markdown"),
     require("plugins/snacks"),
