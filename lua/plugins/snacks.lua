@@ -5,6 +5,7 @@ return {
     ---@type snacks.Config
     opts = {
         explorer = { enabled = true, replace_netrw = true },
+        indent = { enabled = true },
         lazygit = { enabled = true },
         picker = {
             enabled = true,
@@ -48,35 +49,35 @@ return {
             desc = "Files",
         },
         {
-            "<leader>gb",
+            "<leader>sgb",
             function()
                 Snacks.picker.git_branches()
             end,
             desc = "Git Branches",
         },
         {
-            "<leader>gc",
+            "<leader>sgd",
             function()
                 Snacks.picker.git_diff()
             end,
             desc = "Git Diff",
         },
         {
-            "<leader>gf",
+            "<leader>sgf",
             function()
                 Snacks.picker.git_files()
             end,
             desc = "Git Files",
         },
         {
-            "<leader>gl",
+            "<leader>sgl",
             function()
                 Snacks.picker.git_log()
             end,
             desc = "Git Log",
         },
         {
-            "<leader>gs",
+            "<leader>sgs",
             function()
                 Snacks.picker.git_status()
             end,
