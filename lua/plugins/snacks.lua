@@ -4,24 +4,15 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
-        bufdelete = { enabled = true },
-        indent = { enabled = true },
+        explorer = { enabled = true, replace_netrw = true },
         lazygit = { enabled = true },
-        notifier = { enabled = true },
+        picker = {
+            enabled = true,
+            sources = { explorer = { layout = { layout = { position = "right" } } } },
+        },
         terminal = { enabled = true },
     },
     keys = {
-
-        -- bufdelete
-        {
-            mode = "n",
-            "<leader>kd",
-            function()
-                Snacks.bufdelete.other()
-            end,
-            desc = "Delete all other buffers",
-        },
-
         -- lazygit
         {
             -- You can exit by double esc'ing into normal mode and using the shortcut.
@@ -34,10 +25,89 @@ return {
             desc = "Open lazygit",
         },
 
+        -- picker
+        {
+            "<leader>sb",
+            function()
+                Snacks.picker.buffers()
+            end,
+            desc = "Buffers",
+        },
+        {
+            "<leader>sd",
+            function()
+                Snacks.picker.diagnostics()
+            end,
+            desc = "Diagnostics",
+        },
+        {
+            "<leader>sf",
+            function()
+                Snacks.picker.files()
+            end,
+            desc = "Files",
+        },
+        {
+            "<leader>gb",
+            function()
+                Snacks.picker.git_branches()
+            end,
+            desc = "Git Branches",
+        },
+        {
+            "<leader>gc",
+            function()
+                Snacks.picker.git_diff()
+            end,
+            desc = "Git Diff",
+        },
+        {
+            "<leader>gf",
+            function()
+                Snacks.picker.git_files()
+            end,
+            desc = "Git Files",
+        },
+        {
+            "<leader>gl",
+            function()
+                Snacks.picker.git_log()
+            end,
+            desc = "Git Log",
+        },
+        {
+            "<leader>gs",
+            function()
+                Snacks.picker.git_status()
+            end,
+            desc = "Git Status",
+        },
+        {
+            "<leader>sj",
+            function()
+                Snacks.picker.jumps()
+            end,
+            desc = "Jumps",
+        },
+        {
+            "<leader>sn",
+            function()
+                Snacks.picker.notifications()
+            end,
+            desc = "Notifications",
+        },
+        {
+            "<leader>ss",
+            function()
+                Snacks.picker.pickers()
+            end,
+            desc = "[S]elect Picker",
+        },
+
         -- terminal
         {
             -- Set F15 to toggle float terminal.
-            -- NOTE:This only makes sense because I've remapped CAPSLOCK + # to F15.
+            -- NOTE: Only makes sense because remapped CAPSLOCK + # to F15.
             mode = { "i", "n", "t" },
             "<F15>",
             function()
