@@ -37,7 +37,7 @@ vim.opt.showmode = false
 vim.opt.scrolloff = 8
 vim.opt.fillchars = { eob = " " }
 
-require("colors.minimal").setup_colorscheme()
+vim.cmd("colorscheme minimal")
 require("config.keymaps")
 require("config.autocommands")
 
@@ -45,6 +45,6 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
-	install = { colorscheme = { "habamax" } },
+	install = { colorscheme = { "minimal" } },
 	checker = { enabled = false },
 })
