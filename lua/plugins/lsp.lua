@@ -40,8 +40,8 @@ return {
     {
         "mason-org/mason-lspconfig.nvim",
         dependencies = {
-            "mason-org/mason.nvim",      -- Requires Mason to manage servers
-            "neovim/nvim-lspconfig",     -- Requires nvim-lspconfig for LSP client integration
+            "mason-org/mason.nvim", -- Requires Mason to manage servers
+            "neovim/nvim-lspconfig", -- Requires nvim-lspconfig for LSP client integration
         },
         config = function()
             local lspconfig = require("lspconfig")
@@ -65,23 +65,63 @@ return {
                 local opts = { noremap = true, silent = true }
 
                 -- Go to definition
-                vim.keymap.set("n", "gd", vim.lsp.buf.definition, vim.tbl_extend("force", opts, { desc = "Go to definition" }))
+                vim.keymap.set(
+                    "n",
+                    "gd",
+                    vim.lsp.buf.definition,
+                    vim.tbl_extend("force", opts, { desc = "Go to definition" })
+                )
                 -- Go to type definition
-                vim.keymap.set("n", "gD", vim.lsp.buf.type_definition, vim.tbl_extend("force", opts, { desc = "Go to type definition" }))
+                vim.keymap.set(
+                    "n",
+                    "gD",
+                    vim.lsp.buf.type_definition,
+                    vim.tbl_extend("force", opts, { desc = "Go to type definition" })
+                )
                 -- Go to declarations
                 -- vim.keymap.set("n", "gds", vim.lsp.buf.declaration, opts)
                 -- Go to implementations
-                vim.keymap.set("n", "gi", vim.lsp.buf.implementation, vim.tbl_extend("force", opts, { desc = "Go to implementation" }))
+                vim.keymap.set(
+                    "n",
+                    "gi",
+                    vim.lsp.buf.implementation,
+                    vim.tbl_extend("force", opts, { desc = "Go to implementation" })
+                )
                 -- Go to references
-                vim.keymap.set("n", "gr", vim.lsp.buf.references, vim.tbl_extend("force", opts, { desc = "Go to references" }))
+                vim.keymap.set(
+                    "n",
+                    "gr",
+                    vim.lsp.buf.references,
+                    vim.tbl_extend("force", opts, { desc = "Go to references" })
+                )
                 -- Hover documentation
-                vim.keymap.set("n", "K", vim.lsp.buf.hover, vim.tbl_extend("force", opts, { desc = "Hover documentation" }))
+                vim.keymap.set(
+                    "n",
+                    "K",
+                    vim.lsp.buf.hover,
+                    vim.tbl_extend("force", opts, { desc = "Hover documentation" })
+                )
                 -- Signature help
-                vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, vim.tbl_extend("force", opts, { desc = "Signature help" }))
+                vim.keymap.set(
+                    "n",
+                    "<C-k>",
+                    vim.lsp.buf.signature_help,
+                    vim.tbl_extend("force", opts, { desc = "Signature help" })
+                )
                 -- Rename symbol
-                vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, vim.tbl_extend("force", opts, { desc = "Rename symbol" }))
+                vim.keymap.set(
+                    "n",
+                    "<leader>rn",
+                    vim.lsp.buf.rename,
+                    vim.tbl_extend("force", opts, { desc = "Rename symbol" })
+                )
                 -- Code actions
-                vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code actions" }))
+                vim.keymap.set(
+                    "n",
+                    "<leader>ca",
+                    vim.lsp.buf.code_action,
+                    vim.tbl_extend("force", opts, { desc = "Code actions" })
+                )
 
                 -- Disable formatting for lua_ls to avoid conflicts with conform.nvim/stylua
                 if client.name == "lua_ls" then
@@ -92,7 +132,10 @@ return {
                 -- Optional: Format on save if the server supports it
                 if client.server_capabilities.documentFormattingProvider then
                     vim.api.nvim_create_autocmd("BufWritePre", {
-                        group = vim.api.nvim_create_augroup("LspFormatting" .. bufnr, { clear = true }),
+                        group = vim.api.nvim_create_augroup(
+                            "LspFormatting" .. bufnr,
+                            { clear = true }
+                        ),
                         buffer = bufnr,
                         callback = function()
                             vim.lsp.buf.format({ bufnr = bufnr })
@@ -104,8 +147,8 @@ return {
             -- Diagnostics configuration: How Neovim displays errors, warnings, etc.
             vim.diagnostic.config({
                 virtual_text = true, -- Set to false to avoid double inline warnings if blink.cmp provides them
-                signs = true,         -- Show signs in the sign column
-                underline = true,     -- Underline code with diagnostics
+                signs = true, -- Show signs in the sign column
+                underline = true, -- Underline code with diagnostics
                 update_in_insert = false, -- Don't update diagnostics while in insert mode
                 severity_sort = true, -- Sort diagnostics by severity (errors first)
                 float = { border = "rounded" }, -- Rounded border for diagnostic float window
@@ -113,8 +156,14 @@ return {
 
             -- Handler borders: Configure floating window borders for specific LSP features.
             local handlers = {
-                ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
-                ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
+                ["textDocument/hover"] = vim.lsp.with(
+                    vim.lsp.handlers.hover,
+                    { border = "rounded" }
+                ),
+                ["textDocument/signatureHelp"] = vim.lsp.with(
+                    vim.lsp.handlers.signature_help,
+                    { border = "rounded" }
+                ),
             }
 
             -- Per-server settings: Custom configurations for individual language servers.
@@ -123,9 +172,9 @@ return {
                     settings = {
                         Lua = {
                             diagnostics = {
-                                globals = { "vim" },
+                                globals = { "Snacks", "vim" },
                             },
-                            telemetry = { enable = false },          -- Disable telemetry
+                            telemetry = { enable = false }, -- Disable telemetry
                             workspace = { checkThirdParty = false }, -- Don't check external Lua dependencies
                         },
                     },
@@ -171,3 +220,4 @@ return {
         end,
     },
 }
+

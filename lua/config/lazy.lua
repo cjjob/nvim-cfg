@@ -26,30 +26,34 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.have_nerd_font = true
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.cursorline = false
-vim.opt.signcolumn = "no"
-vim.opt.laststatus = 0 -- Turn off statusline.
-vim.opt.ruler = false
+vim.opt.breakindent = true
 vim.opt.clipboard = "unnamedplus"
-vim.opt.showmode = false
-vim.opt.scrolloff = 8
+vim.opt.cursorline = false
+vim.opt.expandtab = true
 vim.opt.fillchars = { eob = " " }
-
--- Show whitespace characters
+vim.opt.ignorecase = true
+vim.opt.laststatus = 0 -- Turn off statusline.
 vim.opt.list = true
 vim.opt.listchars = {
-  tab = "»·",
-  trail = "·",
-  extends = "…",
-  precedes = "…",
-  nbsp = "␣",
+    extends = ">",
+    nbsp = "␣",
+    precedes = "<",
+    tab = "» ",
+    trail = "·",
 }
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.ruler = false
+vim.opt.scrolloff = 999 -- Centers active line.
+vim.opt.shiftwidth = 4
+vim.opt.showmode = false
+vim.opt.signcolumn = "no"
+vim.opt.smartcase = true -- Override `ignorecase` if there are capital letters in the search term.
+vim.opt.tabstop = 4
 
-vim.cmd("colorscheme minimal")
-require("config.keymaps")
 require("config.autocommands")
+require("config.keymaps")
+vim.cmd("colorscheme minimal")
 
 require("lazy").setup({
     spec = {

@@ -4,16 +4,25 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
-        explorer = { enabled = true, replace_netrw = true },
-        indent = { enabled = true },
+        bufdelete = { enabled = true },
         lazygit = { enabled = true },
+        notifier = { enabled = true },
         picker = {
             enabled = true,
-            sources = { explorer = { layout = { layout = { position = "right" } } } },
+            sources = { files = { hidden = true } },
         },
         terminal = { enabled = true },
     },
     keys = {
+        -- bufdelete
+        {
+            mode = "n",
+            "<leader>kd",
+            function()
+                Snacks.bufdelete.other()
+            end,
+            desc = "Delete all other buffers",
+        },
         -- lazygit
         {
             -- You can exit by double esc'ing into normal mode and using the shortcut.
@@ -96,6 +105,13 @@ return {
                 Snacks.picker.notifications()
             end,
             desc = "Notifications",
+        },
+        {
+            "<leader>sr",
+            function()
+                Snacks.picker.grep()
+            end,
+            desc = "[R]egex",
         },
         {
             "<leader>ss",
