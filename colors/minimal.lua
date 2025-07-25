@@ -12,6 +12,7 @@ local code = { bg = colors.black, fg = colors.silver }
 local comment = { bg = colors.black, fg = colors.jet, italic = true }
 local visual = { bg = colors.silver, fg = colors.black }
 local accent = { bg = colors.black, fg = colors.mint }
+local yank = { bg = colors.mint, fg = colors.black }
 
 local function set(group, opts)
     vim.api.nvim_set_hl(0, group, opts)
@@ -162,6 +163,8 @@ function M.setup()
     for _, group in ipairs(accent_groups) do
         set(group, accent)
     end
+
+    set("Yank", yank)
 end
 
 -- Call the setup function directly when the file is sourced by :colorscheme
