@@ -129,7 +129,7 @@ return {
                     client.server_capabilities.documentRangeFormattingProvider = false
                 end
 
-                -- Optional: Format on save if the server supports it
+                -- Optional: Format on save if the server supports it.
                 if client.server_capabilities.documentFormattingProvider then
                     vim.api.nvim_create_autocmd("BufWritePre", {
                         group = vim.api.nvim_create_augroup(
@@ -220,4 +220,3 @@ return {
         end,
     },
 }
-

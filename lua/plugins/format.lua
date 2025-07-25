@@ -10,7 +10,7 @@ return {
         formatters_by_ft = {
             c = { "clang-format" },
             css = { "prettier" },
-            go = { "gofmt" },
+            go = { "gofmt", "goimports" },
             html = { "prettier" },
             javascript = { "prettier" },
             json = { "prettier" },
