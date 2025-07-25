@@ -10,6 +10,7 @@ local colors = {
 local ui = { bg = colors.black, fg = colors.silver }
 local code = { bg = colors.black, fg = colors.silver }
 local comment = { bg = colors.black, fg = colors.jet, italic = true }
+local visual = { bg = colors.silver, fg = colors.black }
 local accent = { bg = colors.black, fg = colors.mint }
 
 local function set(group, opts)
@@ -115,6 +116,18 @@ function M.setup()
     }
     for _, group in ipairs(syntax_groups) do
         set(group, code)
+    end
+
+    local visual_groups = {
+        "IncSearch",
+        "Search",
+        "Visual",
+        "VisualBlock",
+        "VisualLine",
+        "VisualNOS",
+    }
+    for _, group in ipairs(visual_groups) do
+        set(group, visual)
     end
 
     local accent_groups = {
