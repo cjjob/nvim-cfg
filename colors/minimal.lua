@@ -99,6 +99,7 @@ function M.setup()
         "Macro",
         "Number",
         "Operator",
+        "PmenuSel",
         "PreCondit",
         "PreProc",
         "Repeat",
@@ -121,7 +122,11 @@ function M.setup()
 
     local visual_groups = {
         "IncSearch",
+        "Pmenu",
         "Search",
+        "StatusLine",
+        "StatusLineNC",
+        "VertSplit",
         "Visual",
         "VisualBlock",
         "VisualLine",
