@@ -83,6 +83,12 @@ return {
                 -- Code actions
                 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code actions" }))
 
+                -- Disable formatting for lua_ls to avoid conflicts with conform.nvim/stylua
+                if client.name == "lua_ls" then
+                    client.server_capabilities.documentFormattingProvider = false
+                    client.server_capabilities.documentRangeFormattingProvider = false
+                end
+
                 -- Optional: Format on save if the server supports it
                 if client.server_capabilities.documentFormattingProvider then
                     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -149,6 +155,7 @@ return {
                     "rust_analyzer",
                     "ts_ls",
                 },
+                automatic_enable = false,
             })
 
             -- Loop through installed servers and set them up with nvim-lspconfig.
