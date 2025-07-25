@@ -4,11 +4,11 @@ return {
         ---@module 'oil'
         ---@type oil.SetupOpts
         opts = {},
-        dependencies = { { "echasnovski/mini.icons", opts = {} } },
+        -- dependencies = { { "echasnovski/mini.icons", opts = {} } },
         lazy = false,
         config = function()
             require("oil").setup({
-                -- Add any oil.nvim configuration options here.
+                columns = {}, -- Disable icons.
                 -- Example:
                 keymaps = {
                     -- your custom keymaps go here. Example:
