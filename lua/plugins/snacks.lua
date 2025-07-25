@@ -107,7 +107,7 @@ return {
             desc = "Notifications",
         },
         {
-            "<leader>sr",
+            "<leader><leader>",
             function()
                 Snacks.picker.grep()
             end,
