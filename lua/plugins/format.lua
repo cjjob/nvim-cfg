@@ -21,5 +21,10 @@ return {
             yaml = { "prettier" },
         },
         format_on_save = { timeout_ms = 500 },
+        formatters = {
+            -- stylua = {
+            --     prepend_args = { "--config-path", "/Users/conor/.config/nvim/.stylua.toml" },
+            -- },
+        },
     },
 }
